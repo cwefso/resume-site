@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Text.module.scss";
 
 export default function Home() {
   return (
@@ -21,8 +20,29 @@ export default function Home() {
         </span>
       </div>
 
-      <div className="mt-32 grid text-center w-full mt-[20vh]">
-        <p>Oh no! This page is haunted!</p>
+      <div className="mt-32 flex flex-col justify-center align-center text-center w-full mt-[20vh]">
+        <div className="w-full flex flex-row justify-center mb-2">
+          <Image
+            src={"/images/ghost.png"}
+            width={100}
+            height={100}
+            alt="ghost"
+          />
+          <Image
+            src={"/images/ghost.png"}
+            width={100}
+            height={100}
+            alt="ghost"
+            className="transform -scale-x-100"
+          />
+          <Image
+            src={"/images/ghost.png"}
+            width={100}
+            height={100}
+            alt="ghost"
+          />
+        </div>
+        <p className="haunted">Oh no! This page is haunted!</p>
       </div>
     </main>
   );
