@@ -1,19 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import Ghost from "./components/Ghost";
 import Modal from "./components/Modal";
 import { useState } from "react";
+import GhostContainer from "./components/Ghost-Container";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
+  const [ghostFound, setGhostFound] = useState(false);
+  const [ghosts, setGhosts] = useState(0);
 
   const handleOpenModal = () => {
     setIsOpen(true);
   };
 
   return (
-    <main className="flex flex-col items-center p-24">
+    <main className="flex flex-col items-center p-24 h-screen">
       <div className="grid"></div>
       <div className="lines"></div>
       <h1>
@@ -22,7 +24,7 @@ export default function Home() {
       </h1>
       <h2>Code Person</h2>
 
-      <div className="relative flex flex-row gap-8 place-items-center z-[1] mt-[20vh]">
+      <div className="relative flex flex-row gap-8 place-items-center z-[1] mt-20">
         <span className="start-btn pl-2 pr-1 py-1">
           <Link
             href="./resume/Charles Resume.pdf"
@@ -44,17 +46,24 @@ export default function Home() {
 
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
 
-      <div className="mt-32 flex flex-col justify-center align-center text-center w-full mt-[20vh]">
-        <div className="w-full flex flex-row justify-center mb-2">
-          <div className="ghost x">
-            <div className="ghost y">
-              <Ghost />
+      <div className="flex flex-col justify-center align-center text-center w-full ">
+        <div className="w-full flex flex-row justify-center mb-2 relative ">
+          {!isOpen && (
+            <div className="absolute top-0 left-0">
+              <GhostContainer
+                setGhostFound={setGhostFound}
+                setGhosts={setGhosts}
+                ghosts={ghosts}
+              />
             </div>
-          </div>
-          <Ghost />
-          <Ghost />
+          )}
         </div>
-        <p className="haunted">Oh no! This page is haunted!</p>
+        {ghostFound && (
+          <>
+            <p className="haunted mt-12">Oh no! This page is haunted!</p>
+            <p className="haunted mt-12">Ghosts found: {ghosts}</p>
+          </>
+        )}
       </div>
     </main>
   );

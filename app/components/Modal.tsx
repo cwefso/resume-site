@@ -15,7 +15,7 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
     <>
       {isOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-6 rounded-md shadow-md">
+          <div className="bg-gray-800 p-6 rounded-md shadow-md">
             <div className="flex justify-end">
               <button
                 className="text-gray-500 hover:text-gray-700 focus:outline-none"
