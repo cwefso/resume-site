@@ -116,7 +116,7 @@ h2 {
 	display: inline-block;
 	margin:5px;
   font-weight: bold;
-  padding: 10px;
+
     background-color: lightgray;
     text-shadow: -1px -1px black, 1px 1px white;
     color: gray;
@@ -139,4 +139,47 @@ h2 {
   font-family: 'Press Start 2P';
 }
 
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: floatAnimation 3s infinite alternate ease-in-out;
+}
+
+.transition-opacity {
+  transition: opacity 0.5s;
+}
 
