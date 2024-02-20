@@ -18,7 +18,7 @@ export default function Home() {
     <main className="flex flex-col items-center p-24 h-screen">
       <div className="grid"></div>
       <div className="lines"></div>
-      <h1>
+      <h1 className="text-auto">
         <span>Charles Wefso</span>
         <span>Charles Wefso</span>
       </h1>
@@ -27,7 +27,7 @@ export default function Home() {
       <div className="relative flex flex-row gap-8 place-items-center z-[1] mt-20">
         <span className="start-btn pl-2 pr-1 py-1">
           <Link
-            href="./resume/Charles Resume.pdf"
+            href="./resume/Charles Wefso Resume 2024.pdf"
             download="Charles Wefso Resume"
             target="_blank"
           >
@@ -47,15 +47,13 @@ export default function Home() {
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <div className="flex flex-col justify-center align-center text-center w-full ">
-        <div className="w-full flex flex-row justify-center mb-2 relative ">
+        <div className="w-full flex flex-row justify-center mb-2">
           {!isOpen && (
-            <div className="absolute top-0 left-0">
-              <GhostContainer
-                setGhostFound={setGhostFound}
-                setGhosts={setGhosts}
-                ghosts={ghosts}
-              />
-            </div>
+            <GhostContainer
+              setGhostFound={setGhostFound}
+              setGhosts={setGhosts}
+              ghosts={ghosts}
+            />
           )}
         </div>
         {ghostFound && (

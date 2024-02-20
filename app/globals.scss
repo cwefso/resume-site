@@ -182,44 +182,66 @@ h2 {
 .ghost-container{
   margin: 0 auto;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   position: absolute;
   overflow:visible;
+  background-color: #00a1ef;
 }
+
+// .ghost {
+//   display: block;
+//   position: absolute;
+//   // -webkit-animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
+//   // -moz-animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
+//   // -o-animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
+//   animation: moveAndFlip 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate ;
+// }
+
+// @-webkit-keyframes moveX {
+//   from { left: 0; } to { left: 480px; }
+// }
+// @-moz-keyframes moveX {
+//   from { left: 0; } to { left: 480px; }
+// }
+// @-o-keyframes moveX {
+//   from { left: 0; } to { left: 480px; }
+// }
+
+// @-webkit-keyframes moveY {
+//   from { top: 0; } to { top: 280px; }
+// }
+// @-moz-keyframes moveY {
+//   from { top: 0; } to { top: 280px; }
+// }
+// @-o-keyframes moveY {
+//   from { top: 0; } to { top: 280px; }
+// }
+
 
 .ghost {
   display: block;
   position: absolute;
-  -webkit-animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
-  -moz-animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
-  -o-animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
-  animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
+  animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 0s linear 0s;
 }
 
-@-webkit-keyframes moveX {
-  from { left: 0; } to { left: 480px; }
+@keyframes moveAndFlip {
+  0%, 49.9% {
+    left: 0;
+    transform: scaleX(1);
+  }
+  50%, 100% {
+    left: 480px; /* Adjust as needed */
+    transform: scaleX(-1);
+  }
 }
-@-moz-keyframes moveX {
-  from { left: 0; } to { left: 480px; }
-}
-@-o-keyframes moveX {
-  from { left: 0; } to { left: 480px; }
-}
+
 @keyframes moveX {
   from { left: 0; } to { left: 480px; }
 }
 
-@-webkit-keyframes moveY {
-  from { top: 0; } to { top: 280px; }
-}
-@-moz-keyframes moveY {
-  from { top: 0; } to { top: 280px; }
-}
-@-o-keyframes moveY {
-  from { top: 0; } to { top: 280px; }
-}
+
 @keyframes moveY {
-  from { top: 0; } to { top: 280px; }
+  from { top: 0; } to { top: 600px; }
 }
 
 @keyframes flipX {
@@ -227,6 +249,17 @@ h2 {
     transform: scaleX(1);
   }
   50% {
+    transform: scaleX(-1);
+  }
+}
+
+@keyframes moveAndFlip {
+  0%, 100% {
+    left: 0;
+    transform: scaleX(1);
+  }
+  50% {
+    left: 480px; /* Adjust as needed */
     transform: scaleX(-1);
   }
 }
