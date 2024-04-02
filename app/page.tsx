@@ -46,7 +46,7 @@ export default function Home() {
 
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
 
-      <div className="flex flex-col justify-center align-center text-center w-full ">
+      {/* <div className="flex flex-col justify-center align-center text-center w-full ">
         <div className="w-full flex flex-row justify-center mb-2">
           {!isOpen && (
             <GhostContainer
@@ -62,7 +62,7 @@ export default function Home() {
             <p className="haunted mt-12">Ghosts found: {ghosts}</p>
           </>
         )}
-      </div>
+      </div> */}
     </main>
   );
 }

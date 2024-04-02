@@ -1,12 +1,9 @@
 "use client";
 // Modal.js
 import React from "react";
-import {
-  BeakerIcon,
-  SwatchIcon,
-  CodeBracketIcon,
-  ChatBubbleLeftRightIcon,
-} from "@heroicons/react/24/solid";
+import { BeakerIcon, SwatchIcon } from "@heroicons/react/24/solid";
+import { sections } from "./TextSections";
+import { Button } from "./Button";
 
 const Modal = ({ isOpen, setIsOpen, children }: any) => {
   const onClose = () => {
@@ -56,62 +53,20 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
                 collaboratively with others.
               </div>
               <p className="m-8 text-2xl underline">Skills</p>
-              <div className="flex flex-row gap-8">
+              <div className="flex flex-col items-center gap-8">
                 <>
-                  <div className="relative inline-flex group">
+                  {sections.map((section, index) => (
                     <>
-                      <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44FF44] via-[#66FF66] to-[#00FF00] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
-                      <button
-                        className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                        role="button"
-                      >
-                        <ChatBubbleLeftRightIcon className="h-6 w-6 text-[#44FF44] mr-2" />
-                        Content
-                      </button>
+                      <Button
+                        key={index}
+                        text={section.title}
+                        clickHandler={() => console.log(section.title)}
+                        from={section.from}
+                        to={section.to}
+                        icon={section.icon}
+                      />
                     </>
-                  </div>
-                </>
-                <>
-                  <div className="relative inline-flex group">
-                    <>
-                      <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BBFF]  to-[#0055FF] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
-                      <button
-                        className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                        role="button"
-                      >
-                        <CodeBracketIcon className="h-6 w-6 text-[#44BBFF] mr-2" />
-                        Engineering
-                      </button>
-                    </>
-                  </div>
-                </>
-                <>
-                  <div className="relative inline-flex group">
-                    <>
-                      <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#FF4444] to-[#FF4444] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
-                      <button
-                        className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                        role="button"
-                      >
-                        <SwatchIcon className="h-6 w-6 text-[#FF4444] mr-2" />
-                        Design
-                      </button>
-                    </>
-                  </div>
-                </>
-                <>
-                  <div className="relative inline-flex group">
-                    <>
-                      <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#FF44EC] to-[#FF44EC] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
-                      <button
-                        className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                        role="button"
-                      >
-                        <BeakerIcon className="h-6 w-6 text-[#FF44EC] mr-2" />
-                        Testing
-                      </button>
-                    </>
-                  </div>
+                  ))}
                 </>
               </div>
             </div>
