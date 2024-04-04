@@ -1,11 +1,12 @@
 "use client";
-// Modal.js
-import React from "react";
-import { BeakerIcon, SwatchIcon } from "@heroicons/react/24/solid";
+
+import React, { useEffect, useState } from "react";
 import { sections } from "./TextSections";
 import { Button } from "./Button";
 
 const Modal = ({ isOpen, setIsOpen, children }: any) => {
+  const [content, setContent] = useState<string>("");
+
   const onClose = () => {
     setIsOpen(false);
   };
@@ -13,6 +14,12 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
   const closeModal = () => {
     onClose();
   };
+
+  useEffect(() => {
+    if (sections) {
+      setContent(sections[0].text);
+    }
+  }, []);
 
   return (
     <>
@@ -41,32 +48,26 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
               </button>
             </div>
             <div className="max-w-[40vw] m-4 text-center">
-              <div>
-                I<span>&#8217;</span>m Charles Wefso, and I became a software
-                engineer so that I could help improve people<span>&#8217;</span>
-                s lives in meaningful ways. I have a background as a writer and
-                a passion for political engagement. In 2020, after many years
-                living and working in Denver, I decided to explore a new path
-                and enter the world of software engineering. I love building
-                applications because it allows me to use my creativity,
-                problem-solving abilities, and my passion for working
-                collaboratively with others.
-              </div>
+              <div>{content}</div>
               <p className="m-8 text-2xl underline">Skills</p>
-              <div className="flex flex-col items-center gap-8">
+              <div className="grid grid-cols-2 gap-4 place-items-center ">
                 <>
-                  {sections.map((section, index) => (
-                    <>
-                      <Button
-                        key={index}
-                        text={section.title}
-                        clickHandler={() => console.log(section.title)}
-                        from={section.from}
-                        to={section.to}
-                        icon={section.icon}
-                      />
-                    </>
-                  ))}
+                  {sections.map((section, index) => {
+                    if (index > 0) {
+                      return (
+                        <>
+                          <Button
+                            key={index}
+                            title={section.title}
+                            text={section.text}
+                            clickHandler={() => setContent(section.text)}
+                            colors={section.colors as string}
+                            icon={section.icon}
+                          />
+                        </>
+                      );
+                    }
+                  })}
                 </>
               </div>
             </div>

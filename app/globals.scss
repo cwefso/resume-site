@@ -179,43 +179,40 @@ h2 {
   transition: opacity 0.5s;
 }
 
-.ghost-container{
-  margin: 0 auto;
-  width: 100vw;
-  height: 100vh;
+// .ghost-container{
+//   margin: 0 auto;
+//   width: 100vw;
+//   height: 100vh;
+//   position: absolute;
+//   overflow:visible;
+
+// }
+
+.ghost {
+  display: block;
   position: absolute;
-  overflow:visible;
-  background-color: #00a1ef;
+  animation: moveAndFlip 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate ;
 }
 
-// .ghost {
-//   display: block;
-//   position: absolute;
-//   // -webkit-animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
-//   // -moz-animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
-//   // -o-animation: moveX 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, flipX 20s ;
-//   animation: moveAndFlip 20s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate ;
-// }
+@-webkit-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-moz-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-o-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
 
-// @-webkit-keyframes moveX {
-//   from { left: 0; } to { left: 480px; }
-// }
-// @-moz-keyframes moveX {
-//   from { left: 0; } to { left: 480px; }
-// }
-// @-o-keyframes moveX {
-//   from { left: 0; } to { left: 480px; }
-// }
-
-// @-webkit-keyframes moveY {
-//   from { top: 0; } to { top: 280px; }
-// }
-// @-moz-keyframes moveY {
-//   from { top: 0; } to { top: 280px; }
-// }
-// @-o-keyframes moveY {
-//   from { top: 0; } to { top: 280px; }
-// }
+@-webkit-keyframes moveY {
+  from { top: 0; } to { top: 280px; }
+}
+@-moz-keyframes moveY {
+  from { top: 0; } to { top: 280px; }
+}
+@-o-keyframes moveY {
+  from { top: 0; } to { top: 280px; }
+}
 
 
 .ghost {
