@@ -36,12 +36,7 @@ export const Button: React.FC<ButtonProps> = ({
       switch (title) {
         case "Code":
           setIcon(
-            <CodeBracketIcon
-              width={"20px"}
-              height={"20px"}
-              className="mr-4"
-              color="#44FF44"
-            />
+            <CodeBracketIcon width={"20px"} height={"20px"} color="#44FF44" />
           );
           break;
         case "Content":
@@ -49,29 +44,18 @@ export const Button: React.FC<ButtonProps> = ({
             <ChatBubbleLeftRightIcon
               width={"20px"}
               height={"20px"}
-              className="mr-4"
               color="#44BBFF"
             />
           );
           break;
         case "Testing":
           setIcon(
-            <BeakerIcon
-              width={"20px"}
-              height={"20px"}
-              className="mr-4"
-              color="#FF44EC"
-            />
+            <BeakerIcon width={"20px"} height={"20px"} color="#FF44EC" />
           );
           break;
         case "Design":
           setIcon(
-            <SwatchIcon
-              width={"20px"}
-              height={"20px"}
-              className="mr-4"
-              color="#FF4444"
-            />
+            <SwatchIcon width={"20px"} height={"20px"} color="#FF4444" />
           );
           break;
       }
@@ -87,12 +71,12 @@ export const Button: React.FC<ButtonProps> = ({
           ></div>
           <button
             title={title}
-            className="relative inline-flex items-center justify-start w-[224px] px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+            className="relative inline-flex items-center md:justify-between w-[40vw] md:w-[224px] px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-gray-900"
             role="button"
             onClick={clickHandler}
           >
             {icon}
-            <div>{title}</div>
+            <div className="ml-6 md:ml-4">{title}</div>
           </button>
         </div>
       </div>

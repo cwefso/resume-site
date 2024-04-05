@@ -6,9 +6,11 @@ import { Button } from "./Button";
 
 const Modal = ({ isOpen, setIsOpen, children }: any) => {
   const [content, setContent] = useState<string>("");
-
+  const [sectionTitle, setSectionTitle] = useState<string>("");
   const onClose = () => {
     setIsOpen(false);
+    setContent(sections[0].text);
+    setSectionTitle("Bio");
   };
 
   const closeModal = () => {
@@ -18,14 +20,15 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
   useEffect(() => {
     if (sections) {
       setContent(sections[0].text);
+      setSectionTitle(sections[0].title);
     }
   }, []);
 
   return (
     <>
       {isOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 rounded-sm shadow-sm flex justify-center items-center z-10">
-          <div className="bg-gray-800 p-6 rounded-md shadow-md">
+        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 rounded-sm shadow-sm flex  justify-center items-center z-10">
+          <div className="bg-gray-800 p-6 rounded-md shadow-md mx-4 min-h-[80vh] ">
             <div className="flex justify-end">
               <button
                 className="text-gray-500 hover:text-gray-700 focus:outline-none"
@@ -47,10 +50,11 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
                 </svg>
               </button>
             </div>
-            <div className="max-w-[40vw] m-4 text-center">
-              <div>{content}</div>
-              <p className="m-8 text-2xl underline">Skills</p>
-              <div className="grid grid-cols-2 gap-4 place-items-center ">
+            <p className="m-8 text-2xl  text-center">{sectionTitle}</p>
+            <div className="mx-2 md:max-w-[40vw] m-4 text-center">
+              <div className="text-2xl md:text-lg md:h-[550px]">{content}</div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center mt-2">
                 <>
                   {sections.map((section, index) => {
                     if (index > 0) {
@@ -60,7 +64,10 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
                             key={index}
                             title={section.title}
                             text={section.text}
-                            clickHandler={() => setContent(section.text)}
+                            clickHandler={() => {
+                              setSectionTitle(section.title);
+                              setContent(section.text);
+                            }}
                             colors={section.colors as string}
                             icon={section.icon}
                           />

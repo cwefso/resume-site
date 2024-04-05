@@ -33,7 +33,8 @@ export const sections = [
   },
   {
     title: `Design`,
-    text: ``,
+    text: `
+    With a keen eye for design, I excel in translating mockups into functional code, bridging the gap between design and development seamlessly. Proficient in tools like Figma, I collaborate closely with designers to ensure alignment with project vision and user experience goals. My expertise lies in transforming creative concepts into interactive and visually captivating digital experiences, maintaining fidelity to design principles while prioritizing usability and accessibility. Through effective communication and a meticulous attention to detail, I contribute to delivering polished and engaging design solutions across various platforms.`,
     icon: SwatchIcon,
     colors: "from-[#FF4444] to-[#FF4444]",
   },
