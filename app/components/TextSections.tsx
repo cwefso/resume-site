@@ -14,19 +14,20 @@ export const sections = [
   },
   {
     title: `Code`,
-    text: ``,
+    text: `I have 3 years of experience as software engineer, primarily focused on Frontend Engineering. I am skilled in HTML/CSS and JavaScript/TypeScript, as well using libraries like React and frameworks like Next.js. I have experience building and documenting APIs with Express, and I have extensive experience retrieving and sending data to APIs. I am also experienced with using systems like Docker to access containers.`,
     icon: CodeBracketIcon,
     colors: "from-[#44FF44] to-[#00FF00]",
   },
   {
     title: `Content`,
-    text: ``,
+    text: `My background as a writer and creating commercial content gives me a solid foundation for excellent communication and the ability to create compelling content if needed. I am also capable of writing very clear and straightforward documentation, as well as detailed PRs and reviews of others code.`,
     icon: ChatBubbleLeftRightIcon,
     colors: "from-[#44BBFF] to-[#0055FF]",
   },
   {
     title: `Testing`,
-    text: ``,
+    text: `
+    I'm well-versed in Testing Driven Design, proficiently employing various testing libraries to ensure robust code quality. While I've recently focused on Cypress for end-to-end testing, I possess adeptness in other frameworks like Jest and Mocha/Chai for comprehensive integration and unit testing. This versatility enables me to implement rigorous testing methodologies throughout the development cycle, guaranteeing the reliability and functionality of software solutions across diverse environments and scenarios.`,
     icon: BeakerIcon,
     colors: "from-[#FF44EC] to-[#FF44EC]",
   },
