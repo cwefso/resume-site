@@ -54,7 +54,7 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
             <div className="mx-2 md:max-w-[40vw] m-4 text-center">
               <div className="text-2xl md:text-lg md:h-[550px]">{content}</div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center mt-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center pt-12">
                 <>
                   {sections.map((section, index) => {
                     if (index > 0) {

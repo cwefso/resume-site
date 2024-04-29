@@ -30,7 +30,7 @@ export default function Home() {
   // },[ghostFound])
 
   return (
-    <main className="flex flex-col items-center p-24 h-screen">
+    <main className="flex flex-col items-center p-24 h-screen w-screen">
       <div className="grid"></div>
 
       <h1 className="text-auto">
