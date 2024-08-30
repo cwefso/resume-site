@@ -7,6 +7,7 @@ import { Button } from "./Button";
 const Modal = ({ isOpen, setIsOpen, children }: any) => {
   const [content, setContent] = useState<string>("");
   const [sectionTitle, setSectionTitle] = useState<string>("");
+  const [sectionColor, setSectionColor] = useState<string>("");
   const onClose = () => {
     setIsOpen(false);
     setContent(sections[0].text);
@@ -21,6 +22,7 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
     if (sections) {
       setContent(sections[0].text);
       setSectionTitle(sections[0].title);
+      setSectionColor(sections[0].textColor);
     }
   }, []);
 
@@ -28,7 +30,7 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
     <>
       {isOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 rounded-sm shadow-sm flex  justify-center items-center z-10">
-          <div className="bg-gray-800 p-6 rounded-md shadow-md mx-4 min-h-[80vh] ">
+          <div className="bg-gray-800 p-6 rounded-md shadow-md mx-4  h-[80vh]">
             <div className="flex justify-end">
               <button
                 className="text-gray-500 hover:text-gray-700 focus:outline-none"
@@ -50,12 +52,23 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
                 </svg>
               </button>
             </div>
-            <p className="m-8 text-2xl  text-center">{sectionTitle}</p>
-            <div className="mx-2 md:max-w-[40vw] m-4 text-center">
-              <div className="text-2xl md:text-lg md:h-[550px]">{content}</div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center pt-12">
-                <>
+            <div className="mx-2 md:max-w-[40vw] m-4 text-center flex flex-col items-center">
+              <div className="relative top-[5vh]">
+                <p
+                  className="text-2xl text-center"
+                  style={{ color: sectionColor }}
+                >
+                  {sectionTitle}
+                </p>
+              </div>
+
+              <div className="relative top-[10vh]">
+                <div className="text-2xl md:text-lg md:h-[20vh]">{content}</div>
+              </div>
+
+              <div className="relative top-[25vh]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
                   {sections.map((section, index) => {
                     if (index > 0) {
                       return (
@@ -67,6 +80,7 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
                             clickHandler={() => {
                               setSectionTitle(section.title);
                               setContent(section.text);
+                              setSectionColor(section.textColor);
                             }}
                             colors={section.colors as string}
                             icon={section.icon}
@@ -75,7 +89,7 @@ const Modal = ({ isOpen, setIsOpen, children }: any) => {
                       );
                     }
                   })}
-                </>
+                </div>
               </div>
             </div>
           </div>
