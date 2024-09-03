@@ -76,7 +76,7 @@ export const Button: React.FC<ButtonProps> = ({
             onClick={clickHandler}
           >
             {icon}
-            <div className="ml-6 md:ml-4">{title}</div>
+            <div className={`ml-6 md:ml-4 `}>{title}</div>
           </button>
         </div>
       </div>
