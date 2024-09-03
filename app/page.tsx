@@ -39,7 +39,7 @@ export default function Home() {
       </h1>
       <h2>Code Person</h2>
 
-      <div className="relative flex flex-col w-full lg:flex-row lg:justify-center gap-8 place-items-center z-[1] h-20 mt-[30vh] md:mt-20">
+      <div className="relative flex flex-col w-full lg:flex-row lg:justify-center gap-8 place-items-center z-[1] h-20 md:mt-[30vh] md:mt-20">
         <span>
           <Link
             className="start-btn py-1 pl-2 pr-1 w-[50vw] lg:w-[20vw] "
