@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Projects() {
   return (
     <>
-    <main className="flex flex-col items-center p-12 w-screen h-screen overflow-y-scroll">
+    <main className="flex flex-col items-center p-12 w-screen h-screen overflow-y-scroll text-white">
         <span>
           <Link
             className="start-btn py-1 pl-2 pr-1 w-[50vw] lg:w-[20vw] "
@@ -18,7 +18,7 @@ export default function Projects() {
   <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
       <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
-        <img
+0        <img
           alt=""
           src="/images/congress.png"
           className="absolute inset-0 h-full w-full object-cover"
@@ -42,11 +42,6 @@ export default function Projects() {
     </div>
   </div>
 </section>
-
-
-
-
-
 
 <section>
   <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
@@ -107,13 +102,6 @@ export default function Projects() {
     </div>
   </div>
 </section>
-        
-        
-
-
-
-        
-
 
     </main>
     </>
