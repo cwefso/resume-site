@@ -43,7 +43,7 @@ export default function Home() {
         <span>
           <Link
             className="start-btn py-1 pl-2 pr-1 w-[50vw] lg:w-[20vw] "
-            href="./resume/Charles Wefso Resume 2024.pdf"
+            href="./resume/CharlesWefsoResume.pdf"
             download="Charles Wefso Resume"
             target="_blank"
           >
