@@ -83,7 +83,7 @@ export default function Home() {
             RESUME
           </Link>
         </span>
-        <span>
+        {/* <span>
           <button
             className="start-btn py-1 pl-2 pr-1 w-[50vw] lg:w-[20vw]"
             onClick={handleOpenModal}
@@ -91,7 +91,7 @@ export default function Home() {
           >
             ABOUT
           </button>
-        </span>
+        </span> */}
         <span>
           <Link
             className="start-btn py-1 pl-2 pr-1 w-[50vw] lg:w-[20vw]"
