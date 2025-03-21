@@ -143,13 +143,6 @@ export default function Projects() {
         </Link>
       </nav>
 
-      {/* Page Header */}
-      <header className="w-full max-w-screen-xl mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-center">
-          My Projects
-        </h1>
-      </header>
-
       {/* Projects Sections */}
       <div>
         {PROJECTS_DATA.map((project) => (
